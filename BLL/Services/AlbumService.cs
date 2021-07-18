@@ -104,7 +104,7 @@ namespace BLL
             //    };
             //}
 
-            //return mapper.Map<IEnumerable<AlbumDTO>>(albums.Get());
+            return mapper.Map<IEnumerable<AlbumDTO>>(albums.Get());
         }
 
         public void AddCountry(string name)

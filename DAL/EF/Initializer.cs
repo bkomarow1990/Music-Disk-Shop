@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Music_Collections.EF
 {
-    public class Initializer : DropCreateDatabaseAlways<MusciCollectionModel>
+    public class Initializer : CreateDatabaseIfNotExists<MusciCollectionModel>
     {
         protected override void Seed(MusciCollectionModel context)
         {
