@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +29,9 @@ namespace UI_App
 
             LoadCountries();
 
-            //dataGrid.ItemsSource = albumService.GetAll().Select(f => new
-            //{
-            //    f.Name,
-            //});
+            dataGrid.ItemsSource = albumService.GetAll();
+            LoadComboBox();
+            LoadAlbums();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,9 +47,39 @@ namespace UI_App
             countryList.ItemsSource = albumService.GetCountries();
         }
 
+        void LoadAlbums()
+        {
+            cbAlbums.ItemsSource = albumService.GetAll();
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             LoadCountries();
+            LoadAlbums();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                albumService.Add(new Album
+                {
+                    Name = tbName.Text,
+                    ArtishId = (int)cbArtishId.SelectedItem,
+                    GanreId = (int)cbGanre.SelectedItem,
+                    Year = (DateTime)dpYear.SelectedDate
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void LoadComboBox()
+        {
+            List<int> Id = new List<int> { 1, 2, 3 };
+            cbArtishId.ItemsSource = Id;
+            cbGanre.ItemsSource = Id;
         }
     }
 }

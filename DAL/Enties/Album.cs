@@ -15,15 +15,19 @@ namespace DAL
         public string Name { get; set; }
         [Required]
         public int ArtishId { get; set; } // artishId.Name
-        [Required]
-        [ForeignKey("Artish")]    
-        public Artish Artish { get; set; }
+        //[Required]
+        //[ForeignKey("Artish")]    
+        //public Artish Artish { get; set; }
         [Required]
         public DateTime Year { get; set; }
         [Required]
         public int GanreId { get; set; }
+        //[ForeignKey("Ganre")]
+        //public Ganre Ganre { get; set; }
         public int AuditionNumber { get; set; }
         [Required]
         public int CategoryId { get; set; }
+        //[ForeignKey("Category")]
+        //public Category Category { get; set; }
     }
 }

@@ -7,14 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <ToolBar DockPanel.Dock="Top">
-            <Label>Country: </Label>
-            <TextBox x:Name="countryNameTB" MinWidth="150"></TextBox>
-            <Button Click="Button_Click">Add</Button>
-            <ComboBox Name="countryList" MinWidth="150"></ComboBox>
-            <Button Click="Button_Click_1">Refresh</Button>
-        </ToolBar>
-    <DataGrid x:Name="dataGrid">
-    </DataGrid>
+        <StackPanel>
+            <ToolBar DockPanel.Dock="Top">
+                <Label>Country:</Label>
+                <TextBox x:Name="countryNameTB" MinWidth="150"></TextBox>
+                <Button Click="Button_Click">Add</Button>
+                <ComboBox Name="countryList" MinWidth="150"></ComboBox>
+                <Button Click="Button_Click_1">Refresh</Button>
+            </ToolBar>
+            <ToolBar>
+                <Label>Album:</Label>
+                <TextBox x:Name="tbName" MinWidth="150"></TextBox>
+                <DatePicker x:Name="dpYear" MinWidth="150"></DatePicker>
+                <ComboBox Name="cbArtishId" Text="Select artish id" MinWidth="50"/>
+                <ComboBox Name="cbGanre" Text="Select ganre id" MinWidth="50"/>
+                <ComboBox Name="cbCategory" Text="Select category id" MinWidth="50"/>
+                <Button Click="Button_Click_2" >Add</Button>
+                <ComboBox Name="cbAlbums" MinWidth="150"></ComboBox>
+                <Button Click="Button_Click_1">Refresh</Button>
+            </ToolBar>
+            <ToolBar>
+                <Label>Artish:</Label>
+                <TextBox x:Name="tbNameArtish" MinWidth="150"></TextBox>
+                <TextBox x:Name="tbSurnameArtish" MinWidth="150"></TextBox>
+                <ComboBox Name="cbCountryId" />
+                <Button Click="Button_Click_2" >Add</Button>
+                <ComboBox Name="cbArtishs" MinWidth="150"></ComboBox>
+                <Button Click="Button_Click_1">Refresh</Button>
+            </ToolBar>
+            <DataGrid x:Name="dataGrid"/>
+        </StackPanel>
     </DockPanel>
 </Window>
