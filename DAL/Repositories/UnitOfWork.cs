@@ -10,7 +10,7 @@ namespace DAL
     {
         void Save();
         GenericRepository<Album> AlbumRepository { get; }
-        GenericRepository<Artish> ClientRepository { get; }
+        GenericRepository<Artish> ArtishRepository { get; }
         GenericRepository<Category> CategoryRepository { get; }
         GenericRepository<Country> CountryRepository { get; }
         GenericRepository<Ganre> GanreRepository { get; }

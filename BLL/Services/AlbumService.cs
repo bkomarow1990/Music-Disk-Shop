@@ -13,7 +13,9 @@ namespace BLL
         void Add(Album album);
         IEnumerable<string> GetAll();
         void AddCountry(string name);
+        IEnumerable<Album> GetAllTest();
         IEnumerable<string> GetCountries();
+        IEnumerable<int> GetAllCountryId();
     }
     public class AlbumService : IAlbumService
     {
@@ -51,15 +53,35 @@ namespace BLL
         {
             return unitOfWork.AlbumRepository.Get().Select(c => c.Name);
         }
+        public IEnumerable<Album> GetAllTest()
+        {
+            foreach (var item in albums.Get())
+            {
+                yield return new Album()
+                {
+                    Name = item.Name,
+                    ArtishId = item.ArtishId,
+                    Year = item.Year,
+                    GanreId = item.GanreId,
+                    CategoryId = item.CategoryId
+                };
+            }
+        }
 
         public void AddCountry(string name)
         {
             unitOfWork.CountryRepository.Insert(new Country { Name = name });
             unitOfWork.Save();
         }
+
         public IEnumerable<string> GetCountries()
         {
             return unitOfWork.CountryRepository.Get().Select(c => c.Name);
+        }
+
+        public IEnumerable<int> GetAllCountryId()
+        {
+            return unitOfWork.CountryRepository.Get().Select(c => c.Id);
         }
     }
 }
