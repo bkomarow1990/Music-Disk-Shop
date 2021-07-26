@@ -29,9 +29,24 @@ namespace UI_App.Pages
             InitializeComponent();
             LoadGrid();
         }
-        public void LoadGrid()
+        public void LoadGrid() => datagrid.ItemsSource = albumService.GetAllTest().ToList();
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            datagrid.ItemsSource = albumService.GetAllTest().ToList();
+            foreach (var item in datagrid.SelectedItems)
+            {
+                Album album = item as Album;
+                albumService.RemoveSelectedItem((Album)item);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in datagrid.SelectedItems)
+            {
+                Album album = item as Album;
+                albumService.Update(album);
+            }
         }
     }
 }

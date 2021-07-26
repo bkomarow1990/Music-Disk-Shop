@@ -83,6 +83,18 @@
     <Compile Include="Migrations\202107191415461_Change.Designer.cs">
       <DependentUpon>202107191415461_Change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107221058160_AddKeyForAlbum.cs" />
+    <Compile Include="Migrations\202107221058160_AddKeyForAlbum.Designer.cs">
+      <DependentUpon>202107221058160_AddKeyForAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107230503594_ChangeDB.cs" />
+    <Compile Include="Migrations\202107230503594_ChangeDB.Designer.cs">
+      <DependentUpon>202107230503594_ChangeDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107261027008_AddAlbumIdChanges.cs" />
+    <Compile Include="Migrations\202107261027008_AddAlbumIdChanges.Designer.cs">
+      <DependentUpon>202107261027008_AddAlbumIdChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -111,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107191415461_Change.resx">
       <DependentUpon>202107191415461_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107221058160_AddKeyForAlbum.resx">
+      <DependentUpon>202107221058160_AddKeyForAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107230503594_ChangeDB.resx">
+      <DependentUpon>202107230503594_ChangeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107261027008_AddAlbumIdChanges.resx">
+      <DependentUpon>202107261027008_AddAlbumIdChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

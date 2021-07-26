@@ -16,6 +16,8 @@ namespace BLL
         IEnumerable<Album> GetAllTest();
         IEnumerable<string> GetCountries();
         IEnumerable<int> GetAllCountryId();
+        void RemoveSelectedItem(Album album);
+        void Update(Album album);
     }
     public class AlbumService : IAlbumService
     {
@@ -59,6 +61,7 @@ namespace BLL
             {
                 yield return new Album()
                 {
+                    Id = item.Id,
                     Name = item.Name,
                     ArtishId = item.ArtishId,
                     Year = item.Year,
@@ -82,6 +85,18 @@ namespace BLL
         public IEnumerable<int> GetAllCountryId()
         {
             return unitOfWork.CountryRepository.Get().Select(c => c.Id);
+        }
+
+        public void RemoveSelectedItem(Album album)
+        {
+            unitOfWork.AlbumRepository.Delete(album);
+            unitOfWork.Save();
+        }
+
+        public void Update(Album album)
+        {
+            unitOfWork.AlbumRepository.Update(album);
+            unitOfWork.Save();
         }
     }
 }
