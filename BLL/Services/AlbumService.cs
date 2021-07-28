@@ -24,10 +24,11 @@ namespace BLL
         IUnitOfWork unitOfWork;
         IRepository<Album> albums;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public AlbumService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             albums = unitOfWork.AlbumRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

@@ -21,10 +21,11 @@ namespace BLL.Services
         IUnitOfWork unitOfWork;
         IRepository<Category> categories;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public CategoryService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             categories = unitOfWork.CategoryRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

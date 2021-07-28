@@ -22,10 +22,11 @@ namespace BLL.Services
         IUnitOfWork unitOfWork;
         IRepository<Artish> artishes;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public ArtishService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             artishes = unitOfWork.ArtishRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

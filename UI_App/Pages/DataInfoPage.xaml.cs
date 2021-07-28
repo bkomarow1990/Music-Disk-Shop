@@ -45,7 +45,10 @@ namespace UI_App.Pages
             foreach (var item in datagrid.SelectedItems)
             {
                 Album album = item as Album;
-                albumService.Update(album);
+                if (album != null)
+                {
+                    albumService.Update(album);
+                }
             }
         }
     }

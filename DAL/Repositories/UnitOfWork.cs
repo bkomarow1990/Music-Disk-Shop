@@ -20,7 +20,7 @@ namespace DAL
   
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private MusciCollectionModel context = new MusciCollectionModel();
+        private MusciCollectionModel context;// = new MusciCollectionModel();
 
         private GenericRepository<Album> albumRepository;
         private GenericRepository<Artish> artishRepository;
@@ -29,6 +29,11 @@ namespace DAL
         private GenericRepository<Country> countryRepository;
         private GenericRepository<Playlist> playlistRepository;
         private GenericRepository<Track> trackRepository;
+
+        public UnitOfWork(MusciCollectionModel context)
+        {
+            this.context = context;
+        }
 
         public GenericRepository<Album> AlbumRepository
         {

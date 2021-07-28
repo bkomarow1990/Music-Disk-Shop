@@ -23,10 +23,11 @@ namespace BLL.Services
         IUnitOfWork unitOfWork;
         IRepository<Ganre> ganres;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public GanreService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             ganres = unitOfWork.GanreRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

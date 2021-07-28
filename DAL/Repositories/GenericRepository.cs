@@ -36,7 +36,7 @@ namespace DAL
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "")
         {
-            IQueryable<TEntity> query = dbSet;
+            IQueryable<TEntity> query = dbSet.AsNoTracking();
 
             if (filter != null)
             {
@@ -74,7 +74,6 @@ namespace DAL
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
         }
-
         public virtual void Delete(TEntity entityToDelete)
         {
             if (context.Entry(entityToDelete).State == EntityState.Detached)
@@ -82,12 +81,16 @@ namespace DAL
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
-        }   
-
+            context.SaveChanges();
+        }
         public virtual void Update(TEntity entityToUpdate)
         {
-            dbSet.Attach(entityToUpdate);
+            if (context.Entry(entityToUpdate).State == EntityState.Detached)
+            {
+                dbSet.Attach(entityToUpdate);
+            }
             context.Entry(entityToUpdate).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

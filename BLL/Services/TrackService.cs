@@ -20,10 +20,11 @@ namespace BLL.Services
         IUnitOfWork unitOfWork;
         IRepository<Track> traks;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public TrackService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             traks = unitOfWork.TrackRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

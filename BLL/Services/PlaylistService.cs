@@ -21,10 +21,11 @@ namespace BLL.Services
         IUnitOfWork unitOfWork;
         IRepository<Playlist> playlists;
         IMapper mapper;
+        MusciCollectionModel context = new MusciCollectionModel();
 
         public PlaylistService()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new UnitOfWork(context);
             playlists = unitOfWork.PlaylistRepository;
 
             IConfigurationProvider config = new MapperConfiguration(cfg =>

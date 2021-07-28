@@ -10,7 +10,6 @@ namespace DAL
     public class Track
     {
         public int Id { get; set; }
-        public int AlbumId { get; set; }
         public TimeSpan Duration { get; set; }
         public double? Rating { get; set; }
         public int AuditionNumber { get; set; }
