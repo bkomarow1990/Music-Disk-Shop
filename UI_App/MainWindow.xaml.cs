@@ -15,6 +15,11 @@ namespace UI_App
         public MainWindow()
         {
             InitializeComponent();
+            LoadStartupPage();
+        }
+        private void LoadStartupPage()
+        {
+            Main.Content = new StartupPage();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
