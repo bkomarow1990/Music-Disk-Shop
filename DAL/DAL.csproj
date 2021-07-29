@@ -59,6 +59,7 @@
     <Compile Include="Enties\Ganre.cs" />
     <Compile Include="Enties\Playlist.cs" />
     <Compile Include="Enties\Track.cs" />
+    <Compile Include="Enties\User.cs" />
     <Compile Include="Migrations\202107141237502_InitialCreate.cs" />
     <Compile Include="Migrations\202107141237502_InitialCreate.Designer.cs">
       <DependentUpon>202107141237502_InitialCreate.cs</DependentUpon>
@@ -98,6 +99,10 @@
     <Compile Include="Migrations\202107261120156_AddTrackChanges.cs" />
     <Compile Include="Migrations\202107261120156_AddTrackChanges.Designer.cs">
       <DependentUpon>202107261120156_AddTrackChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107281152436_test.cs" />
+    <Compile Include="Migrations\202107281152436_test.Designer.cs">
+      <DependentUpon>202107281152436_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107261120156_AddTrackChanges.resx">
       <DependentUpon>202107261120156_AddTrackChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107281152436_test.resx">
+      <DependentUpon>202107281152436_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

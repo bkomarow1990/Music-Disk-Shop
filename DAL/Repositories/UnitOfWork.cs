@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Enties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,9 @@ namespace DAL
         GenericRepository<Ganre> GanreRepository { get; }
         GenericRepository<Playlist> PlaylistRepository { get; }
         GenericRepository<Track> TrackRepository { get; }
+        GenericRepository<User> UserRepository { get; }
     }
-  
+
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private MusciCollectionModel context;// = new MusciCollectionModel();
@@ -29,6 +31,7 @@ namespace DAL
         private GenericRepository<Country> countryRepository;
         private GenericRepository<Playlist> playlistRepository;
         private GenericRepository<Track> trackRepository;
+        private GenericRepository<User> userRepository;
 
         public UnitOfWork(MusciCollectionModel context)
         {
@@ -119,6 +122,19 @@ namespace DAL
                 return trackRepository;
             }
         }
+
+        public GenericRepository<User> UserRepository
+        {
+            get
+            {
+                if (this.userRepository == null)
+                {
+                    this.userRepository = new GenericRepository<User>(context);
+                }
+                return userRepository;
+            }
+        }
+
 
         public GenericRepository<Artish> ClientRepository => throw new NotImplementedException();
 

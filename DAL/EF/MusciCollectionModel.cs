@@ -1,3 +1,4 @@
+using DAL.Enties;
 using Music_Collections.EF;
 using System;
 using System.Data.Entity;
@@ -19,5 +20,6 @@ namespace DAL
         public virtual DbSet<Ganre> Ganres { get; set; }
         public virtual DbSet<Playlist> Playlists { get; set; }
         public virtual DbSet<Track> Tracks { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

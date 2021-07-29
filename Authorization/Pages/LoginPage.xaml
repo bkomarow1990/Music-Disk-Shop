@@ -1,0 +1,21 @@
+﻿<Page x:Class="Authorization.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Authorization.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="LoginPage">
+
+    <Grid>
+        <StackPanel Background="Beige">
+            <TextBlock Width="Auto" HorizontalAlignment="Center" FontSize="32"  FontWeight="DemiBold" Foreground="Tan" Margin="30">Authorization</TextBlock>
+            <TextBlock HorizontalAlignment="Center" Width="Auto" Foreground="Tan" FontSize="25" Margin="25">Login</TextBlock>
+            <TextBox Margin="100,2" Width="200" Height="35" FontSize="27" SelectedText=""></TextBox>
+            <TextBlock HorizontalAlignment="Center" Width="Auto" Foreground="Tan" FontSize="25" Margin="25">Password</TextBlock>
+            <TextBox Margin="100,2" Width="200"  Height="35" FontSize="27" SelectedText=""></TextBox>
+            <Button Width="300" Margin="0 30 0 0" Content="Login" Click="Button_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

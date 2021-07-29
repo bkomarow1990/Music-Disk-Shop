@@ -1,5 +1,6 @@
 ﻿
 using DAL;
+using DAL.Enties;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -55,6 +56,11 @@ namespace Music_Collections.EF
             Playlist playlist = context.Playlists.Add(new Playlist() { Name = "Favorite" });
             Playlist playlist1 = context.Playlists.Add(new Playlist() { Name = "My" });
             Playlist playlist2 = context.Playlists.Add(new Playlist() { Name = "For weather" });
+            context.SaveChanges();
+
+            User user = context.Users.Add(new User() { Login = "admin", Password = "admin", Email = "test@gmail.com" });
+            User user1 = context.Users.Add(new User() { Login = "admin1", Password = "admin1", Email = "test1@gmail.com" });
+            User user2 = context.Users.Add(new User() { Login = "admin2", Password = "admin2", Email = "test2@gmail.com" });
             context.SaveChanges();
         }
     }
