@@ -12,10 +12,11 @@
             <ColumnDefinition Width="613*"/>
         </Grid.ColumnDefinitions >
         <Grid Grid.Column="0">
-                <StackPanel>
-                    <Button Click="Button_Click" Height="50" Content="Add new item"/>
-                    <Button Click="Button_Click_1" Height="50" Content="Show all item"/>
-                </StackPanel>
+            <StackPanel>
+                <Button Margin="10" Click="Button_Click" Height="50" Content="Add new item"/>
+                <Button Margin="10" Click="Button_Click_1" Height="50" Content="Show all item"/>
+                <Button Margin="10" Click="Button_Click_2" Height="50" Content="Exit"/>
+            </StackPanel>
         </Grid>
         <Grid Grid.Column="1">
             <Frame x:Name="Main" NavigationUIVisibility="Hidden" />

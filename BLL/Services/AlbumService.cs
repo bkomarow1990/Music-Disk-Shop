@@ -65,8 +65,10 @@ namespace BLL
                     Id = item.Id,
                     Name = item.Name,
                     ArtishId = item.ArtishId,
+                    Artish = item.Artish,
                     Year = item.Year,
                     GanreId = item.GanreId,
+                    Ganre = item.Ganre,
                     CategoryId = item.CategoryId
                 };
             }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{668BCC33-1E01-4AF9-A319-550FAB558ED2}</ProjectGuid>
+    <ProjectGuid>{2BC8F39E-3D3E-4225-9D94-2DE8283B2660}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UI_App</RootNamespace>
-    <AssemblyName>UI_App</AssemblyName>
+    <RootNamespace>Authorization_UI_</RootNamespace>
+    <AssemblyName>Authorization%28UI%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -37,12 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.1.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.1\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -50,7 +44,6 @@
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,43 +75,8 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AdminPanelPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DataInfoPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\RegistrationPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SignInPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\StartupPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AdminPanelPage.xaml.cs">
-      <DependentUpon>AdminPanelPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DataInfoPage.xaml.cs">
-      <DependentUpon>DataInfoPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\RegistrationPage.xaml.cs">
-      <DependentUpon>RegistrationPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SignInPage.xaml.cs">
-      <DependentUpon>SignInPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\StartupPage.xaml.cs">
-      <DependentUpon>StartupPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -146,11 +104,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{b1050722-1453-41f3-a7df-4e913008419e}</Project>
+      <Project>{B1050722-1453-41F3-A7DF-4E913008419E}</Project>
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">

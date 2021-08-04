@@ -64,6 +64,7 @@
     <Compile Include="Services\GanreService.cs" />
     <Compile Include="Services\PlaylistService.cs" />
     <Compile Include="Services\TrackService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
